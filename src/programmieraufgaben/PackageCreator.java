@@ -20,7 +20,7 @@ public class PackageCreator {
      * @param dataPackage Hier wird das Objekt übergeben in das die abgefragten Werte gespeichert werden sollen
      * @return Gibt das als Parameter übergebene Objekt, dass mit den abgefragten Werten befüllt wurde zurück
      */
-    
+
 
 
     public static boolean IPistGültig(String ip) {
