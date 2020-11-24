@@ -44,6 +44,8 @@ public class PackageCreator {
         }
     }
 
+
+
     public DataPackage fillParameters(DataPackage dataPackage) {
 
         System.out.println("Bitte geben Sie die Version ein (entweder 4 oder 6)");
@@ -66,11 +68,11 @@ public class PackageCreator {
         boolean h = true;
         while (h) {
             String[] Z = scanner.next().split("\\s");
-            if(scanner.next().isEmpty()) {
-                if(scanner.next().equals(".")){
-                    if(scanner.nextLine().isEmpty()){
+            if(scanner.next().equals(".")) {
+                if(scanner.nextLine().isEmpty()){
+
                         h=false;
-                    }
+
                 }
             }
         }
