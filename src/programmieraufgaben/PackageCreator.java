@@ -17,7 +17,7 @@ public class PackageCreator {
     /**
      * Hier sollen die Kommandozeilen-Abfragen abgefragt und die Antworten
      * gespeichert werden
-     * Es sollte auf Fehlerbehandlung geachtet werden (falsche Eingaben, ...)
+     * Es sollte auf Fehlerbehandlung geachtet werden (falsche Eingaben, ..)
      *
      * @param dataPackage Hier wird das Objekt übergeben in das die abgefragten Werte gespeichert werden sollen
      * @return Gibt das als Parameter übergebene Objekt, dass mit den abgefragten Werten befüllt wurde zurück
