@@ -19,6 +19,7 @@ public class PackageCreator {
      * gespeichert werden
      * Es sollte auf Fehlerbehandlung geachtet werden (falsche Eingaben, ...)
      *
+     *
      * @param dataPackage Hier wird das Objekt übergeben in das die abgefragten Werte gespeichert werden sollen
      * @return Gibt das als Parameter übergebene Objekt, dass mit den abgefragten Werten befüllt wurde zurück
      */
