@@ -114,8 +114,6 @@ public class PackageCreator {
          * hier trennen wir jedes element wenn "\\n" erkennt.
          **/
         strings = str1.split("(?=\\n)|(?<=\\n)");
-        System.out.println(Arrays.toString(strings));
-
         Nachricht2 = strings;
 
         /**
@@ -127,11 +125,12 @@ public class PackageCreator {
                 joiner.add(strings[i]);
             }
             else {
-                joiner.add(strings[i]+" ");
+                joiner.add(strings[i]);
             }
 
         }
         String str = joiner.toString();
+        System.out.println(str);
         /**
          * hier wird die Text getrennt durch reguläre ausdruck, damit betrachten wir jedes wort , wenn " " erkkent . und betrachten wir auch die Bindestrich/Schrägstrich
          * sowie "!" und ","zeichen.
@@ -139,7 +138,9 @@ public class PackageCreator {
          *
          * dises ist die letztes Array ,die wir später wie wir wollen trennen können .
          * */
-        splited = str.split("(?=-)|(?<=-)|(?=\\s)|(?<=\\s)|\\n|(?=/)|(?<=/)|(?=!)|(?<=!)|(?<=,)");
+        splited = str.split("(?<=\\.)|(?=\\.)|(?=-)|(?<=-)|(?=\\s)|(?<=\\s)|(?<=\\n)|(?=\\n)|(?=/)|(?<=/)|(?=!)|(?<=!)|(?<=,)");
+
+        System.out.println(Arrays.toString(splited));
         return dataPackage;
     }
 
@@ -196,7 +197,7 @@ public class PackageCreator {
             }
         }
         /**
-         * hier prüfen und lösen wir die "null" stelle
+         * hier prüfen und lösen wir die "null" stelle des Array und speichern die letzte Ergebnisse in strings Array ein
          * */
         String[] target = values.toArray(new String[values.size()]);
 
@@ -224,12 +225,19 @@ public class PackageCreator {
      */
 
     public void printOutPackage(List<DataPackage> dataPackages) {
+        /**
+         * hier prüfen wir ob ein Text mit leerzeichen anfängt oder endet
+         *
+         * */
         boolean t = true;
         if(strings[0]==" "||strings[strings.length-1]==" ")
         {
             System.out.println("Die Nachricht darf keine Leerzeichen am Zeilenanfang oder am Zeilenende enthalten.\nBitte geben Sie gültige eingabe ein.");
         }
-
+        /**
+         * hier prüfen wir ob ein wort länger als die Datenteil lang ist
+         *
+         * */
         else if(t){
 
             for (int i = 0 ; i<strings.length;i++){
@@ -245,6 +253,9 @@ public class PackageCreator {
             }
         }
         else
+        /**
+         * hier drucken wir die Ergebniss aus
+         * */
             System.out.println("Die maximale Datenteil-länge ist " + DatenTeillang + ".");
             System.out.println("\n");
             System.out.println("Version : " + Version);
@@ -256,7 +267,6 @@ public class PackageCreator {
             System.out.println("Es sind " + strings.length + " Datenpakete notwendig.");
             System.out.println("\n");
             int aufruf = 1;
-            int Anzahl = 0;
 
             for (int x = 0; x < strings.length; x++) {
                 System.out.println("Version : " + Version);
